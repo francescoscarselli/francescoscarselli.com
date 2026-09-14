@@ -43,10 +43,27 @@ function interno(link) {
   return link.pathname.endsWith('.html') || link.pathname.endsWith('/');
 }
 
+function scorriVerso(selettore) {
+  const bersaglio = document.querySelector(selettore);
+  if (!bersaglio) return false;
+  const fermo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  bersaglio.scrollIntoView({ behavior: fermo ? 'auto' : 'smooth', block: 'start' });
+  history.replaceState({}, '', selettore);
+  return true;
+}
+
 document.addEventListener('click', (event) => {
   if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
   const link = event.target.closest('a');
-  if (!link || !interno(link)) return;
+  if (!link) return;
+
+  const href = link.getAttribute('href') || '';
+  if (href.length > 1 && href.startsWith('#') && link.origin === location.origin) {
+    if (scorriVerso(href)) event.preventDefault();
+    return;
+  }
+
+  if (!interno(link)) return;
 
   event.preventDefault();
   go(link.href, true).catch(() => { location.href = link.href; });
