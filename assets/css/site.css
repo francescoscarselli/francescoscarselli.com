@@ -400,18 +400,35 @@ img { display: block; max-width: 100%; height: auto; }
   .barra-tempo { display: none; }
 }
 @media (max-width: 640px) {
-  .testata { flex-wrap: wrap; gap: var(--s2); }
+  .testata { flex-wrap: wrap; gap: var(--s2); padding-block: var(--s2); }
   .testata-voci { order: 3; width: 100%; justify-content: space-between; gap: var(--s2); }
   .testata-lingua { border-left: 0; padding-left: 0; }
+
   .apertura { min-height: 82svh; }
   .apertura-foto img { object-position: 50% 12%; }
   .apertura-velo {
     background: linear-gradient(180deg, rgba(18,16,15,.72) 0%, rgba(18,16,15,.15) 26%, rgba(18,16,15,.72) 58%, rgba(18,16,15,.96) 82%, var(--fondo) 100%);
   }
   .apertura-frase { font-size: var(--t3); }
-  .diario article { grid-template-columns: 1fr; gap: var(--s1); }
-  .albo li { flex-direction: column; gap: 2px; font-size: var(--t3); }
-  .albo .minuto { width: auto; }
+
+  .sezione { padding-block: var(--s4); }
+  h2 { font-size: 30px; }
+
+  .disco-griglia { grid-template-columns: 1fr; gap: var(--s2); }
+  .copertina { max-width: 132px; }
+  .tracce { margin-top: var(--s2); }
+  .tracce button { padding: 10px 0; }
+  .tracce .traccia-titolo { font-size: var(--t3); }
+
+  .ritratto-griglia img { max-height: 260px; object-fit: cover; object-position: 50% 35%; }
+
+  .albo { margin-block: var(--s2); }
+  .albo li { flex-direction: column; gap: 0; font-size: 16px; padding: 11px 0; line-height: 1.45; }
+  .albo .minuto { width: auto; font-size: var(--t1); }
+
+  .diario { gap: var(--s3); }
+  .diario article { grid-template-columns: 1fr; gap: 2px; padding-top: var(--s2); }
+  .diario picture { margin-top: var(--s2); }
 }
 
 .video-griglia {
