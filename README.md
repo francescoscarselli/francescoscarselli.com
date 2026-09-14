@@ -107,9 +107,14 @@ poi apri `http://localhost:8000` nel browser.
 
 ## Come è pubblicato
 
-Il sito sta su GitHub Pages, gratis, con il dominio `francescoscarselli.com`
-scritto nel file `CNAME`. Ogni volta che carichi le modifiche su GitHub, il sito
-si aggiorna da solo dopo un minuto.
+Il sito sta su GitHub Pages, gratis. Ogni volta che carichi le modifiche su
+GitHub, il sito si aggiorna da solo dopo un minuto.
+
+Finché i DNS del dominio puntano al vecchio sito, l'indirizzo è
+`francescoscarselli.github.io/francescoscarselli.com`. Quando si passa al
+dominio vero, il file `docs/CNAME-da-attivare` va spostato nella cartella
+principale e rinominato `CNAME`: da quel momento GitHub serve il sito su
+`francescoscarselli.com`.
 
 Non c'è nessun tracciamento e nessun cookie: per questo non c'è la fascia dei
 cookie da accettare. Nessun dato di chi visita il sito viene raccolto.
