@@ -158,3 +158,243 @@ img { display: block; max-width: 100%; height: auto; }
     transition-duration: .001ms !important;
   }
 }
+
+.testata {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  padding: var(--s3) var(--gronda);
+}
+.testata-nome {
+  font-family: var(--titolo);
+  font-size: var(--t4);
+  text-decoration: none;
+  margin-right: auto;
+}
+.testata-voci { display: flex; gap: var(--s3); }
+.testata-voci a, .testata-lingua {
+  font-size: var(--t2);
+  color: var(--secondario);
+  text-decoration: none;
+}
+.testata-voci a:hover, .testata-lingua:hover { color: var(--testo); }
+.testata-lingua { border-left: 1px solid var(--bordo); padding-left: var(--s3); }
+
+.apertura {
+  position: relative;
+  min-height: 78svh;
+  display: flex;
+  align-items: flex-end;
+  margin-top: -84px;
+  padding-top: 84px;
+}
+.apertura-foto { position: absolute; inset: 0; }
+.apertura-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 26%;
+  animation: respiro 8s ease-out 1 both;
+}
+@keyframes respiro {
+  from { transform: scale(1.02); }
+  to { transform: scale(1); }
+}
+.apertura-velo {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(172deg, rgba(18,16,15,.6) 0%, rgba(18,16,15,.2) 30%, rgba(18,16,15,.88) 74%, var(--fondo) 100%),
+    linear-gradient(95deg, rgba(18,16,15,.92) 0%, rgba(18,16,15,.5) 36%, rgba(18,16,15,0) 64%);
+}
+.apertura-testo { position: relative; padding-bottom: clamp(var(--s4), 7vw, var(--s6)); }
+.apertura-frase {
+  font-family: var(--titolo);
+  font-weight: 300;
+  font-size: clamp(var(--t3), 2.1vw, 23px);
+  line-height: 1.6;
+  max-width: 44ch;
+  margin-top: var(--s3);
+  text-shadow: 0 1px 24px rgba(18,16,15,.85);
+}
+
+.disco-griglia {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) 1fr;
+  gap: clamp(var(--s3), 5vw, var(--s5));
+  align-items: start;
+}
+.copertina img { width: 100%; }
+
+.tracce {
+  list-style: none;
+  margin: var(--s3) 0;
+  padding: 0;
+  max-width: 44rem;
+}
+.tracce li + li { border-top: 1px solid var(--bordo); }
+.tracce button {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s2);
+  width: 100%;
+  padding: 12px 0;
+  background: none;
+  border: 0;
+  color: var(--secondario);
+  font: inherit;
+  font-size: var(--t3);
+  text-align: left;
+  cursor: pointer;
+}
+.tracce .traccia-titolo { font-family: var(--titolo); font-size: var(--t4); font-weight: 300; }
+.tracce .minuto { margin-left: auto; }
+.tracce button:hover:not(:disabled) { color: var(--testo); }
+.tracce button:disabled { cursor: default; }
+.tracce .in-ascolto button { color: var(--testo); }
+.tracce .in-ascolto .traccia-titolo::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--accento);
+}
+.senza-audio .nota-audio { display: block; }
+.nota-audio { display: none; max-width: 44ch; }
+
+.barra {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  height: 56px;
+  padding-inline: var(--gronda);
+  background: var(--superficie);
+  border-top: 1px solid var(--bordo);
+}
+.barra-play {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border: 1px solid var(--accento);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  position: relative;
+}
+.barra-play::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 8px;
+  height: 10px;
+  background: var(--accento);
+  clip-path: polygon(0 0, 3px 0, 3px 100%, 0 100%, 5px 100%, 5px 0, 8px 0, 8px 100%, 5px 100%, 5px 0);
+}
+.barra.in-pausa .barra-play::before {
+  width: 9px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.barra-testo { display: flex; gap: var(--s2); align-items: baseline; min-width: 0; }
+.barra-titolo {
+  font-family: var(--titolo);
+  font-size: var(--t3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.barra-linea { flex: 1; height: 2px; background: var(--bordo); min-width: 60px; }
+.barra-linea i {
+  display: block;
+  height: 100%;
+  background: var(--accento);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+.barra-chiudi {
+  background: none;
+  border: 0;
+  color: var(--secondario);
+  font-size: var(--t4);
+  line-height: 1;
+  cursor: pointer;
+  padding: var(--s1);
+}
+
+.ritratto-griglia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--s3), 5vw, var(--s5));
+  align-items: center;
+}
+
+.albo {
+  list-style: none;
+  margin: var(--s3) 0;
+  padding: 0;
+  max-width: 62rem;
+}
+.albo li {
+  display: flex;
+  gap: var(--s3);
+  padding: 14px 0;
+  border-top: 1px solid var(--bordo);
+  font-family: var(--titolo);
+  font-size: var(--t4);
+  font-weight: 300;
+}
+.albo .minuto { flex: none; width: 4.5rem; font-family: var(--corrente); }
+
+.diario { display: grid; gap: var(--s4); margin-top: var(--s3); }
+.diario article {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: var(--s3);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--bordo);
+}
+.diario h3 { margin-bottom: var(--s1); }
+.diario picture { display: block; margin-top: var(--s3); max-width: 42rem; }
+
+.community p { max-width: 52ch; }
+
+.piede {
+  border-top: 1px solid var(--bordo);
+  padding-block: var(--s5) var(--s4);
+}
+.piede-griglia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--s4);
+  align-items: start;
+}
+.piede nav { display: flex; flex-direction: column; gap: var(--s1); }
+.piede nav a { font-size: var(--t2); text-decoration: none; color: var(--secondario); }
+.piede nav a:hover { color: var(--testo); }
+.piede-nota { max-width: 32ch; }
+
+@media (max-width: 860px) {
+  .ritratto-griglia { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .disco-griglia { grid-template-columns: 1fr; }
+  .copertina { max-width: 220px; }
+  .barra-tempo { display: none; }
+}
+@media (max-width: 640px) {
+  .testata { flex-wrap: wrap; gap: var(--s2); }
+  .testata-voci { order: 3; width: 100%; justify-content: space-between; gap: var(--s2); }
+  .testata-lingua { border-left: 0; padding-left: 0; }
+  .apertura { min-height: 70svh; }
+  .diario article { grid-template-columns: 1fr; gap: var(--s1); }
+  .albo li { flex-direction: column; gap: 2px; font-size: var(--t3); }
+  .albo .minuto { width: auto; }
+}

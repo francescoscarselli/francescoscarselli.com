@@ -8,8 +8,157 @@
 <link rel="alternate" hreflang="it" href="https://francescoscarselli.com/">
 <link rel="alternate" hreflang="en" href="https://francescoscarselli.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://francescoscarselli.com/">
+<link rel="preload" href="assets/fonts/archivo-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/newsreader-200.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<main></main>
+<a class="salta" href="#principale">Vai al contenuto</a>
+
+<header class="testata">
+  <a class="testata-nome" href="index.html">Francesco Scarselli</a>
+  <nav class="testata-voci" aria-label="Sezioni del sito">
+    <a href="biografia.html">Biografia</a>
+    <a href="discografia.html">Dischi</a>
+    <a href="video.html">Video</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <a class="testata-lingua" href="en/index.html" hreflang="en" lang="en">English</a>
+</header>
+
+<main id="principale">
+
+<section class="apertura">
+  <picture class="apertura-foto">
+    <source type="image/webp" srcset="assets/img/ritratto-apertura-640.webp 640w, assets/img/ritratto-apertura-960.webp 960w, assets/img/ritratto-apertura-1280.webp 1280w" sizes="100vw">
+    <img src="assets/img/ritratto-apertura-1280.jpg" width="1280" height="853" alt="Francesco Scarselli in concerto, gli occhi chiusi sulla fisarmonica" fetchpriority="high">
+  </picture>
+  <div class="apertura-velo"></div>
+  <div class="contenitore apertura-testo">
+    <h1>Francesco Scarselli</h1>
+    <p class="apertura-frase">Fisarmonica jazz e variété. Dall'organetto suonato a sei anni alla Coupe Mondiale: quattro titoli mondiali e il repertorio che ama di più, fra Piazzolla, Parker e il Brasile.</p>
+    <p class="azioni">
+      <a class="bottone" href="#ascolta">Ascolta</a>
+      <a class="bottone tenue" href="video.html">Guarda i video</a>
+    </p>
+  </div>
+</section>
+
+<section class="disco sezione" id="ascolta" data-disco="Accordion Alchemy">
+  <div class="contenitore disco-griglia">
+    <picture class="copertina">
+      <source type="image/webp" srcset="assets/img/cover-accordion-alchemy-480.webp 480w, assets/img/cover-accordion-alchemy-640.webp 640w" sizes="(max-width: 720px) 220px, 260px">
+      <img src="assets/img/cover-accordion-alchemy-640.jpg" width="640" height="640" loading="lazy" alt="Copertina di Accordion Alchemy: Francesco Scarselli con la fisarmonica dentro un cerchio dorato">
+    </picture>
+    <div>
+      <p class="minuto">Ultima pubblicazione</p>
+      <h2>Accordion Alchemy</h2>
+      <p class="minuto">EP, 2024 — cinque brani fra Piazzolla, Parker e il repertorio brasiliano</p>
+      <ol class="tracce">
+        <li><button type="button" data-src="" data-duration="228"><span class="traccia-titolo">Valentango</span><span class="minuto">3:48</span></button></li>
+        <li><button type="button" data-src="" data-duration="174"><span class="traccia-titolo">Casse Gueule</span><span class="minuto">2:54</span></button></li>
+        <li><button type="button" data-src="" data-duration="151"><span class="traccia-titolo">Tico Tico No Fubá</span><span class="minuto">2:31</span></button></li>
+        <li><button type="button" data-src="" data-duration="246"><span class="traccia-titolo">Il tuo Sguardo</span><span class="minuto">4:06</span></button></li>
+        <li><button type="button" data-src="" data-duration="138"><span class="traccia-titolo">Donna Lee</span><span class="minuto">2:18</span></button></li>
+      </ol>
+      <p class="nota-audio minuto">Gli estratti da ascoltare qui arrivano presto. Intanto l'album è su tutte le piattaforme.</p>
+      <p class="azioni"><a class="bottone" href="https://push.fm/fl/accordionalchemy">Ascolta l'album intero</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore ritratto-griglia">
+    <div>
+      <h2>Chi è</h2>
+      <p>Francesco Scarselli è nato a Campobasso nel 2006 ed è cresciuto a Campochiaro. Ha cominciato a suonare l'organetto a sei anni e a undici era campione del mondo.</p>
+      <p>Nel 2020 ha incontrato la fisarmonica jazz e il suo maestro, Renzo Ruggieri. Oggi studia al Conservatorio Gaetano Braga di Teramo e suona una Bugari Armando.</p>
+      <p>In due mesi del 2023 ha vinto i tre concorsi più importanti al mondo, uno dietro l'altro.</p>
+      <p><a href="biografia.html">La storia per esteso</a></p>
+    </div>
+    <picture>
+      <source type="image/webp" srcset="assets/img/volto-470.webp">
+      <img src="assets/img/volto-470.jpg" width="470" height="500" loading="lazy" alt="Francesco Scarselli di profilo mentre suona, gli occhi chiusi">
+    </picture>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore">
+    <h2>Quattro volte campione del mondo</h2>
+    <ol class="albo">
+      <li><span class="minuto">2023</span><span>Coupe Mondiale CIA, Bijeljina — Junior Virtuoso Entertainment, 24,07 su 25</span></li>
+      <li><span class="minuto">2023</span><span>Premio Internazionale della Fisarmonica, Castelfidardo — Junior Variété, 19,85 su 20</span></li>
+      <li><span class="minuto">2023</span><span>Trofeo Mondiale CMA — Junior Variété</span></li>
+      <li><span class="minuto">2016</span><span>Campionato del Mondo, Bologna — Categoria A organetto, 99 su 100</span></li>
+      <li><span class="minuto">2015</span><span>Campionato del Mondo, Montescaglioso — Categoria A, 99,50 su 100</span></li>
+    </ol>
+    <p><a href="biografia.html">Tutti i premi</a></p>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore">
+    <h2>In corso</h2>
+    <div class="diario">
+      <article>
+        <p class="minuto">settembre 2026</p>
+        <div>
+          <h3>Jazz Accordion Orchestra al PIF di Castelfidardo</h3>
+          <p>Il debutto assoluto dell'orchestra di fisarmoniche jazz diretta da Renzo Ruggieri, sul palco di Piazza della Repubblica al 51° Premio Internazionale della Fisarmonica.</p>
+          <picture>
+            <source type="image/webp" srcset="assets/img/strumento-600.webp">
+            <img src="assets/img/strumento-600.jpg" width="600" height="440" loading="lazy" alt="Le mani di Francesco Scarselli sulla tastiera e sul mantice della fisarmonica Bugari">
+          </picture>
+        </div>
+      </article>
+      <article>
+        <p class="minuto">2026</p>
+        <div>
+          <h3>Nuovi singoli in lavorazione</h3>
+          <p>Il seguito di Accordion Alchemy e Ethnic Euphony è in scrittura. Chi è nel canale lo saprà per primo.</p>
+        </div>
+      </article>
+      <article>
+        <p class="minuto">2026</p>
+        <div>
+          <h3>Nasce Worldwide Accordionists</h3>
+          <p>Un canale per fisarmonicisti di tutto il mondo: registrazioni, concorsi, repertorio, cose che si imparano solo parlando con chi suona.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sezione community">
+  <div class="contenitore">
+    <h2>Worldwide Accordionists</h2>
+    <p>Il canale dei fisarmonicisti: nuove uscite, concorsi in giro per il mondo, repertorio e qualche retroscena dai concerti. Si entra gratis e si esce quando si vuole.</p>
+    <p class="azioni">
+      <a class="bottone" href="https://t.me/worldwideaccordionists">Entra nel canale Telegram</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="piede" id="contatti">
+  <div class="contenitore piede-griglia">
+    <div>
+      <h2>Per un concerto</h2>
+      <p><a href="mailto:info@francescoscarselli.com">info@francescoscarselli.com</a></p>
+    </div>
+    <nav aria-label="Profili social">
+      <a href="https://youtube.com/@francescoscarselli">YouTube</a>
+      <a href="https://instagram.com/francesco_scarselli">Instagram</a>
+      <a href="https://facebook.com/francescoscarselli.official">Facebook</a>
+      <a href="https://open.spotify.com/artist/1GVGCBt9BLbeAoKMVGDyLu">Spotify</a>
+      <a href="https://t.me/worldwideaccordionists">Telegram</a>
+    </nav>
+    <p class="minuto piede-nota">Fotografie dal festival Tramantici, gennaio 2026.<br>© Francesco Scarselli</p>
+  </div>
+</footer>
+
+<script type="module" src="assets/js/player.js"></script>
 </body>
 </html>
