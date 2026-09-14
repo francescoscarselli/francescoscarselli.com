@@ -1,3 +1,4 @@
 .DS_Store
 assets/img/src/
 *.tmp
+.playwright-mcp/

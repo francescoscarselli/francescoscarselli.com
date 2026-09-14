@@ -47,7 +47,7 @@ for originale in "$lavoro"/*; do
       utili+=("$larghezza")
     fi
   done
-  if [[ ! " ${utili[*]} " == *" $larghezza_originale "* ]]; then
+  if [[ "$nome" != cover-* && ! " ${utili[*]} " == *" $larghezza_originale "* ]]; then
     utili+=("$larghezza_originale")
   fi
 
