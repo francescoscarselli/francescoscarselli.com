@@ -179,14 +179,17 @@ img { display: block; max-width: 100%; height: auto; }
   font-size: var(--t4);
   text-decoration: none;
   margin-right: auto;
+  text-shadow: 0 1px 10px rgba(18, 16, 15, .9);
 }
 .testata-voci { display: flex; gap: var(--s3); }
 .testata-voci a, .testata-lingua {
-  font-size: var(--t2);
-  color: var(--secondario);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--testo);
   text-decoration: none;
+  text-shadow: 0 1px 10px rgba(18, 16, 15, .9);
 }
-.testata-voci a:hover, .testata-lingua:hover { color: var(--testo); }
+.testata-voci a:hover, .testata-lingua:hover { color: var(--accento); }
 .testata-lingua { border-left: 1px solid var(--bordo); padding-left: var(--s3); }
 
 .apertura {
@@ -385,8 +388,8 @@ img { display: block; max-width: 100%; height: auto; }
   align-items: start;
 }
 .piede nav { display: flex; flex-direction: column; gap: var(--s1); }
-.piede nav a { font-size: var(--t2); text-decoration: none; color: var(--secondario); }
-.piede nav a:hover { color: var(--testo); }
+.piede nav a { font-size: 15px; text-decoration: none; color: var(--testo); }
+.piede nav a:hover { color: var(--accento); }
 .piede-nota { max-width: 32ch; }
 
 @media (max-width: 860px) {
@@ -401,8 +404,12 @@ img { display: block; max-width: 100%; height: auto; }
   .testata { flex-wrap: wrap; gap: var(--s2); }
   .testata-voci { order: 3; width: 100%; justify-content: space-between; gap: var(--s2); }
   .testata-lingua { border-left: 0; padding-left: 0; }
-  .apertura { min-height: 70svh; }
-  .apertura-foto img { object-position: 54% 20%; }
+  .apertura { min-height: 82svh; }
+  .apertura-foto img { object-position: 50% 12%; }
+  .apertura-velo {
+    background: linear-gradient(180deg, rgba(18,16,15,.72) 0%, rgba(18,16,15,.15) 26%, rgba(18,16,15,.72) 58%, rgba(18,16,15,.96) 82%, var(--fondo) 100%);
+  }
+  .apertura-frase { font-size: var(--t3); }
   .diario article { grid-template-columns: 1fr; gap: var(--s1); }
   .albo li { flex-direction: column; gap: 2px; font-size: var(--t3); }
   .albo .minuto { width: auto; }
