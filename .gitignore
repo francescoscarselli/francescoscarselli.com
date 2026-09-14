@@ -2,3 +2,4 @@
 assets/img/src/
 *.tmp
 .playwright-mcp/
+*.bckp
