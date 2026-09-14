@@ -394,6 +394,7 @@ img { display: block; max-width: 100%; height: auto; }
   .testata-voci { order: 3; width: 100%; justify-content: space-between; gap: var(--s2); }
   .testata-lingua { border-left: 0; padding-left: 0; }
   .apertura { min-height: 70svh; }
+  .apertura-foto img { object-position: 54% 20%; }
   .diario article { grid-template-columns: 1fr; gap: var(--s1); }
   .albo li { flex-direction: column; gap: 2px; font-size: var(--t3); }
   .albo .minuto { width: auto; }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://francescoscarselli.com/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://francescoscarselli.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francescoscarselli.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francescoscarselli.com/"/>
+  </url>
+  <url>
+    <loc>https://francescoscarselli.com/en/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://francescoscarselli.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francescoscarselli.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francescoscarselli.com/"/>
+  </url>
+  <url>
+    <loc>https://francescoscarselli.com/biografia.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://francescoscarselli.com/biografia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francescoscarselli.com/en/biography.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francescoscarselli.com/biografia.html"/>
+  </url>
+  <url>
+    <loc>https://francescoscarselli.com/en/biography.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://francescoscarselli.com/biografia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francescoscarselli.com/en/biography.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francescoscarselli.com/biografia.html"/>
+  </url>
+  <url>
+    <loc>https://francescoscarselli.com/discografia.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://francescoscarselli.com/discografia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francescoscarselli.com/en/discography.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francescoscarselli.com/discografia.html"/>
+  </url>
+  <url>
+    <loc>https://francescoscarselli.com/en/discography.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://francescoscarselli.com/discografia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francescoscarselli.com/en/discography.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francescoscarselli.com/discografia.html"/>
+  </url>
+  <url>
+    <loc>https://francescoscarselli.com/video.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://francescoscarselli.com/video.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francescoscarselli.com/en/videos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francescoscarselli.com/video.html"/>
+  </url>
+  <url>
+    <loc>https://francescoscarselli.com/en/videos.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://francescoscarselli.com/video.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://francescoscarselli.com/en/videos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://francescoscarselli.com/video.html"/>
+  </url>
+</urlset>

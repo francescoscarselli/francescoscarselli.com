@@ -54,9 +54,10 @@ for page in PAGES:
             if not resolved.exists():
                 note(page, f"collegamento rotto: {candidate}")
 
-    langs = re.findall(r'<link rel="alternate" hreflang="([a-z-]+)" href="([^"]+)"', source)
-    if {code for code, _ in langs} != {"it", "en", "x-default"}:
-        note(page, "hreflang incompleto: servono it, en e x-default")
+    if page.name != "404.html":
+        langs = re.findall(r'<link rel="alternate" hreflang="([a-z-]+)" href="([^"]+)"', source)
+        if {code for code, _ in langs} != {"it", "en", "x-default"}:
+            note(page, "hreflang incompleto: servono it, en e x-default")
 
 def blocco(source, apertura, chiusura):
     trovato = re.search(apertura + r".*?" + chiusura, source, re.S)
