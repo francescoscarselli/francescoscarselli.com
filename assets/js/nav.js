@@ -10,20 +10,26 @@ async function fetchPage(url) {
   return documento;
 }
 
+function sostituisci(selettore, incoming) {
+  const nuovo = incoming.querySelector(selettore);
+  const vecchio = document.querySelector(selettore);
+  if (!nuovo || !vecchio) return false;
+  vecchio.replaceWith(nuovo.cloneNode(true));
+  return true;
+}
+
 async function go(url, push) {
   const incoming = await fetchPage(url);
+  if (!incoming.querySelector('main')) throw new Error('pagina senza contenuto');
+
   if (push) history.pushState({}, '', url);
 
   document.title = incoming.title;
   document.documentElement.lang = incoming.documentElement.lang;
 
-  const testata = incoming.querySelector('.testata');
-  if (testata) document.querySelector('.testata').replaceWith(testata);
-
-  document.querySelector('main').replaceWith(incoming.querySelector('main'));
-
-  const piede = incoming.querySelector('.piede');
-  if (piede) document.querySelector('.piede').replaceWith(piede);
+  sostituisci('.testata', incoming);
+  sostituisci('main', incoming);
+  sostituisci('.piede', incoming);
 
   window.scrollTo({ top: 0 });
   window.dispatchEvent(new CustomEvent('page:changed'));

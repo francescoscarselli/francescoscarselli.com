@@ -206,11 +206,6 @@ img { display: block; max-width: 100%; height: auto; }
   height: 100%;
   object-fit: cover;
   object-position: 62% 26%;
-  animation: respiro 8s ease-out 1 both;
-}
-@keyframes respiro {
-  from { transform: scale(1.02); }
-  to { transform: scale(1); }
 }
 .apertura-velo {
   position: absolute;
