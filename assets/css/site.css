@@ -398,3 +398,37 @@ img { display: block; max-width: 100%; height: auto; }
   .albo li { flex-direction: column; gap: 2px; font-size: var(--t3); }
   .albo .minuto { width: auto; }
 }
+
+.video-griglia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--s3);
+  margin-top: var(--s4);
+}
+.video { aspect-ratio: 16 / 9; background: var(--superficie); max-width: 100%; }
+.video button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--testo);
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.video img { width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.video button span {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: var(--s2);
+  font-family: var(--titolo);
+  font-size: var(--t4);
+  font-weight: 300;
+  background: linear-gradient(transparent, rgba(18,16,15,.94));
+}
+.video button:hover img { opacity: .95; }
+.video iframe { width: 100%; height: 100%; border: 0; display: block; }

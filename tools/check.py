@@ -58,6 +58,33 @@ for page in PAGES:
     if {code for code, _ in langs} != {"it", "en", "x-default"}:
         note(page, "hreflang incompleto: servono it, en e x-default")
 
+def blocco(source, apertura, chiusura):
+    trovato = re.search(apertura + r".*?" + chiusura, source, re.S)
+    if not trovato:
+        return None
+    testo = trovato.group(0)
+    testo = re.sub(r'href="[^"]*"', 'href=""', testo)
+    return re.sub(r"\s+", " ", testo).strip()
+
+for lingua, pagine in (("it", [p for p in PAGES if p.parent == ROOT]),
+                       ("en", [p for p in PAGES if p.parent != ROOT])):
+    riferimento = None
+    for page in pagine:
+        source = page.read_text(encoding="utf-8")
+        for nome, apertura, chiusura in (("testata", r"<header", r"</header>"),
+                                         ("piede", r"<footer", r"</footer>")):
+            corrente = blocco(source, apertura, chiusura)
+            if corrente is None:
+                note(page, f"manca il blocco {nome}")
+                continue
+            chiave = (lingua, nome)
+            if riferimento is None:
+                riferimento = {}
+            if chiave not in riferimento:
+                riferimento[chiave] = (corrente, page)
+            elif riferimento[chiave][0] != corrente:
+                note(page, f"{nome} diversa da {riferimento[chiave][1].name}")
+
 REQUIRED_FONTS = [
     "assets/fonts/newsreader-200.woff2",
     "assets/fonts/newsreader-300.woff2",

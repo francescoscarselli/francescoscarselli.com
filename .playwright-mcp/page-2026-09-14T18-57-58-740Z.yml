@@ -1,0 +1,139 @@
+- generic [ref=f2e1]:
+  - link "Vai al contenuto" [ref=f2e2] [cursor=pointer]:
+    - /url: "#principale"
+  - banner [ref=f2e3]:
+    - link "Francesco Scarselli" [ref=f2e4] [cursor=pointer]:
+      - /url: index.html
+    - navigation "Sezioni del sito" [ref=f2e5]:
+      - link "Biografia" [ref=f2e6] [cursor=pointer]:
+        - /url: biografia.html
+      - link "Dischi" [ref=f2e7] [cursor=pointer]:
+        - /url: discografia.html
+      - link "Video" [ref=f2e8] [cursor=pointer]:
+        - /url: video.html
+      - link "Contatti" [ref=f2e9] [cursor=pointer]:
+        - /url: "#contatti"
+    - link "English" [ref=f2e10] [cursor=pointer]:
+      - /url: en/index.html
+  - main [ref=f2e11]:
+    - generic [ref=f2e12]:
+      - img "Francesco Scarselli in concerto, gli occhi chiusi sulla fisarmonica" [ref=f2e14]
+      - generic [ref=f2e16]:
+        - heading "Francesco Scarselli" [level=1] [ref=f2e17]
+        - paragraph [ref=f2e18]: "Fisarmonica jazz e variété. Dall'organetto suonato a sei anni alla Coupe Mondiale: quattro titoli mondiali e il repertorio che ama di più, fra Piazzolla, Parker e il Brasile."
+        - paragraph [ref=f2e19]:
+          - link "Ascolta" [ref=f2e20] [cursor=pointer]:
+            - /url: "#ascolta"
+          - link "Guarda i video" [ref=f2e21] [cursor=pointer]:
+            - /url: video.html
+    - generic [ref=f2e23]:
+      - 'img "Copertina di Accordion Alchemy: Francesco Scarselli con la fisarmonica dentro un cerchio dorato" [ref=f2e25]'
+      - generic [ref=f2e26]:
+        - paragraph [ref=f2e27]: Ultima pubblicazione
+        - heading "Accordion Alchemy" [level=2] [ref=f2e28]
+        - paragraph [ref=f2e29]: EP, 2024 — cinque brani fra Piazzolla, Parker e il repertorio brasiliano
+        - list [ref=f2e30]:
+          - listitem [ref=f2e31]:
+            - button "Valentango 3:48" [active] [pressed] [ref=f2e32] [cursor=pointer]:
+              - generic [ref=f2e33]: Valentango
+              - generic [ref=f2e34]: 3:48
+          - listitem [ref=f2e35]:
+            - button "Casse Gueule 2:54" [disabled] [ref=f2e36]:
+              - generic [ref=f2e37]: Casse Gueule
+              - generic [ref=f2e38]: 2:54
+          - listitem [ref=f2e39]:
+            - button "Tico Tico No Fubá 2:31" [disabled] [ref=f2e40]:
+              - generic [ref=f2e41]: Tico Tico No Fubá
+              - generic [ref=f2e42]: 2:31
+          - listitem [ref=f2e43]:
+            - button "Il tuo Sguardo 4:06" [disabled] [ref=f2e44]:
+              - generic [ref=f2e45]: Il tuo Sguardo
+              - generic [ref=f2e46]: 4:06
+          - listitem [ref=f2e47]:
+            - button "Donna Lee 2:18" [disabled] [ref=f2e48]:
+              - generic [ref=f2e49]: Donna Lee
+              - generic [ref=f2e50]: 2:18
+        - paragraph [ref=f2e51]:
+          - link "Ascolta l'album intero" [ref=f2e52] [cursor=pointer]:
+            - /url: https://push.fm/fl/accordionalchemy
+    - generic [ref=f2e54]:
+      - generic [ref=f2e55]:
+        - heading "Chi è" [level=2] [ref=f2e56]
+        - paragraph [ref=f2e57]: Francesco Scarselli è nato a Campobasso nel 2006 ed è cresciuto a Campochiaro. Ha cominciato a suonare l'organetto a sei anni e a undici era campione del mondo.
+        - paragraph [ref=f2e58]: Nel 2020 ha incontrato la fisarmonica jazz e il suo maestro, Renzo Ruggieri. Oggi studia al Conservatorio Gaetano Braga di Teramo e suona una Bugari Armando.
+        - paragraph [ref=f2e59]: In due mesi del 2023 ha vinto i tre concorsi più importanti al mondo, uno dietro l'altro.
+        - paragraph [ref=f2e60]:
+          - link "La storia per esteso" [ref=f2e61] [cursor=pointer]:
+            - /url: biografia.html
+      - img "Francesco Scarselli di profilo mentre suona, gli occhi chiusi" [ref=f2e63]
+    - generic [ref=f2e65]:
+      - heading "Quattro volte campione del mondo" [level=2] [ref=f2e66]
+      - list [ref=f2e67]:
+        - listitem [ref=f2e68]:
+          - generic [ref=f2e69]: "2023"
+          - generic [ref=f2e70]: Coupe Mondiale CIA, Bijeljina — Junior Virtuoso Entertainment, 24,07 su 25
+        - listitem [ref=f2e71]:
+          - generic [ref=f2e72]: "2023"
+          - generic [ref=f2e73]: Premio Internazionale della Fisarmonica, Castelfidardo — Junior Variété, 19,85 su 20
+        - listitem [ref=f2e74]:
+          - generic [ref=f2e75]: "2023"
+          - generic [ref=f2e76]: Trofeo Mondiale CMA — Junior Variété
+        - listitem [ref=f2e77]:
+          - generic [ref=f2e78]: "2016"
+          - generic [ref=f2e79]: Campionato del Mondo, Bologna — Categoria A organetto, 99 su 100
+        - listitem [ref=f2e80]:
+          - generic [ref=f2e81]: "2015"
+          - generic [ref=f2e82]: Campionato del Mondo, Montescaglioso — Categoria A, 99,50 su 100
+      - paragraph [ref=f2e83]:
+        - link "Tutti i premi" [ref=f2e84] [cursor=pointer]:
+          - /url: biografia.html
+    - generic [ref=f2e86]:
+      - heading "In corso" [level=2] [ref=f2e87]
+      - generic [ref=f2e88]:
+        - article [ref=f2e89]:
+          - paragraph [ref=f2e90]: settembre 2026
+          - generic [ref=f2e91]:
+            - heading "Jazz Accordion Orchestra al PIF di Castelfidardo" [level=3] [ref=f2e92]
+            - paragraph [ref=f2e93]: Il debutto assoluto dell'orchestra di fisarmoniche jazz diretta da Renzo Ruggieri, sul palco di Piazza della Repubblica al 51° Premio Internazionale della Fisarmonica.
+            - img "Le mani di Francesco Scarselli sulla tastiera e sul mantice della fisarmonica Bugari" [ref=f2e95]
+        - article [ref=f2e96]:
+          - paragraph [ref=f2e97]: "2026"
+          - generic [ref=f2e98]:
+            - heading "Nuovi singoli in lavorazione" [level=3] [ref=f2e99]
+            - paragraph [ref=f2e100]: Il seguito di Accordion Alchemy e Ethnic Euphony è in scrittura. Chi è nel canale lo saprà per primo.
+        - article [ref=f2e101]:
+          - paragraph [ref=f2e102]: "2026"
+          - generic [ref=f2e103]:
+            - heading "Nasce Worldwide Accordionists" [level=3] [ref=f2e104]
+            - paragraph [ref=f2e105]: "Un canale per fisarmonicisti di tutto il mondo: registrazioni, concorsi, repertorio, cose che si imparano solo parlando con chi suona."
+    - generic [ref=f2e107]:
+      - heading "Worldwide Accordionists" [level=2] [ref=f2e108]
+      - paragraph [ref=f2e109]: "Il canale dei fisarmonicisti: nuove uscite, concorsi in giro per il mondo, repertorio e qualche retroscena dai concerti. Si entra gratis e si esce quando si vuole."
+      - paragraph [ref=f2e110]:
+        - link "Entra nel canale Telegram" [ref=f2e111] [cursor=pointer]:
+          - /url: https://t.me/worldwideaccordionists
+  - contentinfo [ref=f2e112]:
+    - generic [ref=f2e113]:
+      - generic [ref=f2e114]:
+        - heading "Per un concerto" [level=2] [ref=f2e115]
+        - paragraph [ref=f2e116]:
+          - link "info@francescoscarselli.com" [ref=f2e117] [cursor=pointer]:
+            - /url: mailto:info@francescoscarselli.com
+      - navigation "Profili social" [ref=f2e118]:
+        - link "YouTube" [ref=f2e119] [cursor=pointer]:
+          - /url: https://youtube.com/@francescoscarselli
+        - link "Instagram" [ref=f2e120] [cursor=pointer]:
+          - /url: https://instagram.com/francesco_scarselli
+        - link "Facebook" [ref=f2e121] [cursor=pointer]:
+          - /url: https://facebook.com/francescoscarselli.official
+        - link "Spotify" [ref=f2e122] [cursor=pointer]:
+          - /url: https://open.spotify.com/artist/1GVGCBt9BLbeAoKMVGDyLu
+        - link "Telegram" [ref=f2e123] [cursor=pointer]:
+          - /url: https://t.me/worldwideaccordionists
+      - paragraph [ref=f2e124]: Fotografie dal festival Tramantici, gennaio 2026.© Francesco Scarselli
+  - generic [ref=f2e125]:
+    - button "Metti in pausa" [ref=f2e126] [cursor=pointer]
+    - generic [ref=f2e127]:
+      - generic [ref=f2e128]: Valentango
+      - generic [ref=f2e129]: 0:00
+    - button "Chiudi il lettore" [ref=f2e132] [cursor=pointer]: ×
