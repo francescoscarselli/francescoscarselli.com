@@ -372,7 +372,7 @@ img { display: block; max-width: 100%; height: auto; }
   border-top: 1px solid var(--bordo);
 }
 .diario h3 { margin-bottom: var(--s1); }
-.diario picture { display: block; margin-top: var(--s3); max-width: 42rem; }
+.diario picture { display: block; margin-top: var(--s3); max-width: 26rem; }
 
 .community p { max-width: 52ch; }
 
@@ -442,3 +442,38 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .video a:hover img { opacity: .95; }
 .video iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.community-griglia {
+  display: grid;
+  grid-template-columns: minmax(120px, 190px) 1fr;
+  gap: clamp(var(--s3), 4vw, var(--s5));
+  align-items: center;
+}
+.logo-canale { width: 100%; height: auto; }
+
+.marchio { margin: 0 0 var(--s2); }
+.marchio img {
+  width: 172px;
+  height: auto;
+  border-radius: 3px;
+}
+
+.video-principale { margin: var(--s4) 0 var(--s5); }
+.video-principale video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--superficie);
+  aspect-ratio: 16 / 9;
+}
+.video-principale figcaption {
+  margin-top: 12px;
+  font-size: var(--t2);
+  color: var(--secondario);
+  max-width: 60ch;
+}
+
+@media (max-width: 640px) {
+  .community-griglia { grid-template-columns: 1fr; justify-items: start; }
+  .logo-canale { max-width: 150px; }
+}

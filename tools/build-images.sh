@@ -14,7 +14,6 @@ fi
 
 ritagli=(
   "strumento ritratto-apertura.jpg 600x440+420+310"
-  "volto ritratto-apertura.jpg 470x500+355+18"
   "apertura-stretta ritratto-apertura.jpg 660x853+330+0"
 )
 
