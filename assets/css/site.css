@@ -264,12 +264,16 @@ img { display: block; max-width: 100%; height: auto; }
 .tracce button:hover:not(:disabled) { color: var(--testo); }
 .tracce button:disabled { cursor: default; }
 .tracce .in-ascolto button { color: var(--testo); }
+.tracce button { padding-left: 19px; }
+.tracce .traccia-titolo { position: relative; }
 .tracce .in-ascolto .traccia-titolo::before {
   content: '';
-  display: inline-block;
+  position: absolute;
+  left: -19px;
+  top: 50%;
   width: 7px;
   height: 7px;
-  margin-right: 10px;
+  margin-top: -3.5px;
   border-radius: 50%;
   background: var(--accento);
 }
@@ -298,24 +302,33 @@ img { display: block; max-width: 100%; height: auto; }
   cursor: pointer;
   position: relative;
 }
-.barra-play::before {
+.barra-play::before,
+.barra-play::after {
   content: '';
   position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 8px;
-  height: 10px;
+  top: 50%;
+  width: 3px;
+  height: 11px;
   background: var(--accento);
-  clip-path: polygon(0 0, 3px 0, 3px 100%, 0 100%, 5px 100%, 5px 0, 8px 0, 8px 100%, 5px 100%, 5px 0);
+  transform: translateY(-50%);
 }
+.barra-play::before { left: 10px; }
+.barra-play::after { right: 10px; }
 .barra.in-pausa .barra-play::before {
-  width: 9px;
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  left: 11px;
+  width: 0;
+  height: 0;
+  background: none;
+  border-left: 9px solid var(--accento);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
 }
-.barra-testo { display: flex; gap: var(--s2); align-items: baseline; min-width: 0; }
+.barra.in-pausa .barra-play::after { content: none; }
+.barra-testo { display: flex; gap: var(--s2); align-items: center; min-width: 0; }
 .barra-titolo {
   font-family: var(--titolo);
   font-size: var(--t3);
+  line-height: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -329,14 +342,22 @@ img { display: block; max-width: 100%; height: auto; }
   transform: scaleX(0);
 }
 .barra-chiudi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: none;
   background: none;
   border: 0;
   color: var(--secondario);
   font-size: var(--t4);
   line-height: 1;
   cursor: pointer;
-  padding: var(--s1);
+  padding: 0;
 }
+.barra-chiudi:hover { color: var(--testo); }
+.barra-tempo { line-height: 1; }
 
 .ritratto-griglia {
   display: grid;
