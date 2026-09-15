@@ -5,6 +5,7 @@ audio.preload = 'none';
 
 let queue = createQueue([]);
 let barra = null;
+let chiusaDallUtente = false;
 
 function readTracks(section) {
   return [...section.querySelectorAll('.tracce button')].map((button) => ({
@@ -31,8 +32,11 @@ function buildBar() {
 
   barra.querySelector('.barra-play').addEventListener('click', toggle);
   barra.querySelector('.barra-chiudi').addEventListener('click', () => {
+    chiusaDallUtente = true;
     audio.pause();
     audio.removeAttribute('src');
+    audio.load();
+    queue = createQueue([]);
     barra.hidden = true;
     paintTracks();
   });
@@ -41,7 +45,7 @@ function buildBar() {
 
 function paintBar() {
   const track = currentTrack(queue);
-  if (!track || !barra) return;
+  if (!track || !barra || chiusaDallUtente) return;
   barra.hidden = false;
   barra.querySelector('.barra-titolo').textContent = track.title;
   barra.querySelector('.barra-play').setAttribute(
@@ -64,6 +68,7 @@ function paintTracks() {
 }
 
 function play(index) {
+  chiusaDallUtente = false;
   queue = selectTrack(queue, index);
   const track = currentTrack(queue);
   if (!track || !track.src) return;
