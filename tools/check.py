@@ -91,11 +91,12 @@ for lingua, pagine in (("it", [p for p in PAGES if p.parent == ROOT]),
                 note(page, f"{nome} diversa da {riferimento[chiave][1].name}")
 
 REQUIRED_FONTS = [
-    "assets/fonts/newsreader-200.woff2",
     "assets/fonts/newsreader-300.woff2",
     "assets/fonts/newsreader-300-italic.woff2",
+    "assets/fonts/newsreader-700.woff2",
     "assets/fonts/archivo-400.woff2",
     "assets/fonts/archivo-500.woff2",
+    "assets/fonts/instrument-serif.woff2",
     "assets/fonts/OFL.txt",
 ]
 for relative in REQUIRED_FONTS:

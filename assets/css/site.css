@@ -182,7 +182,6 @@ img { display: block; max-width: 100%; height: auto; }
 .testata-nome {
   font-family: var(--titolo);
   font-size: var(--t4);
-  font-weight: 700;
   text-decoration: none;
   margin-right: auto;
   text-shadow: 0 1px 10px rgba(18, 16, 15, .9);
