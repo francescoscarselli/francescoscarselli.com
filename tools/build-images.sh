@@ -13,8 +13,9 @@ if [ ! -d "$sorgenti" ]; then
 fi
 
 ritagli=(
-  "strumento ritratto-apertura.jpg 600x440+420+310"
-  "apertura-stretta ritratto-apertura.jpg 660x853+330+0"
+  "apertura-stretta ritratto-apertura.jpg 2063x2666+1031+0"
+  "volto ritratto-apertura.jpg 1469x1563+1109+56"
+  "strumento ritratto-apertura.jpg 1875x1375+1312+969"
 )
 
 shopt -s nullglob
@@ -38,7 +39,11 @@ for originale in "$lavoro"/*; do
   else
     trattamento=(-colorspace Gray -channel RGB -level 3%,96%,1.05 +channel
                  -fill '#181310' -colorize 15 -quality 84)
-    misure=(480 640 960 1280 1920)
+    case "$nome" in
+      ritratto-apertura) misure=(640 960 1280 1920 2560) ;;
+      apertura-stretta)  misure=(480 640 960 1280) ;;
+      *)                 misure=(480 640 960 1280) ;;
+    esac
   fi
 
   utili=()
@@ -47,15 +52,15 @@ for originale in "$lavoro"/*; do
       utili+=("$larghezza")
     fi
   done
-  if [[ "$nome" != cover-* && ! " ${utili[*]} " == *" $larghezza_originale "* ]]; then
-    utili+=("$larghezza_originale")
+  if [ ${#utili[@]} -eq 0 ]; then
+    utili=("$larghezza_originale")
   fi
 
   for larghezza in "${utili[@]}"; do
     magick "$originale" "${trattamento[@]}" -resize "${larghezza}x" \
-      -strip "$destinazione/$nome-$larghezza.jpg"
+      -unsharp 0x0.7+0.6+0.02 -strip "$destinazione/$nome-$larghezza.jpg"
     magick "$originale" "${trattamento[@]}" -resize "${larghezza}x" \
-      -strip -define webp:method=6 "$destinazione/$nome-$larghezza.webp"
+      -unsharp 0x0.7+0.6+0.02 -strip -define webp:method=6 "$destinazione/$nome-$larghezza.webp"
   done
-  echo "$nome ${larghezza_originale}px"
+  echo "$nome ${larghezza_originale}px -> ${utili[*]}"
 done

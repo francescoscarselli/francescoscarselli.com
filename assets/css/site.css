@@ -537,3 +537,11 @@ body:has(.consenso) .barra { bottom: 96px; }
   .consenso-azioni .bottone { flex: 1; text-align: center; }
   body:has(.consenso) .barra { bottom: 150px; }
 }
+
+.ritratto-ampio { margin: 0; max-width: 70ch; }
+.ritratto-ampio img { width: 100%; }
+.ritratto-ampio figcaption {
+  margin-top: 10px;
+  font-size: var(--t2);
+  color: var(--secondario);
+}
