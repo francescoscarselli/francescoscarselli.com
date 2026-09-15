@@ -27,20 +27,27 @@ function buildBar() {
       <span class="barra-tempo minuto">0:00</span>
     </div>
     <div class="barra-linea"><i></i></div>
-    <button type="button" class="barra-chiudi" aria-label="Chiudi il lettore">&times;</button>`;
+    <button type="button" class="barra-chiudi" aria-label="Chiudi il lettore">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 3l10 10M13 3L3 13"/>
+      </svg>
+    </button>`;
   document.body.append(barra);
 
   barra.querySelector('.barra-play').addEventListener('click', toggle);
-  barra.querySelector('.barra-chiudi').addEventListener('click', () => {
-    chiusaDallUtente = true;
-    audio.pause();
-    audio.removeAttribute('src');
-    audio.load();
-    queue = createQueue([]);
-    barra.hidden = true;
-    paintTracks();
-  });
+  barra.querySelector('.barra-chiudi').addEventListener('click', chiudiLettore);
   return barra;
+}
+
+function chiudiLettore() {
+  if (!barra || barra.hidden) return;
+  chiusaDallUtente = true;
+  audio.pause();
+  audio.removeAttribute('src');
+  audio.load();
+  queue = createQueue([]);
+  barra.hidden = true;
+  paintTracks();
 }
 
 function paintBar() {
@@ -94,6 +101,10 @@ audio.addEventListener('timeupdate', paintBar);
 audio.addEventListener('play', () => { paintBar(); paintTracks(); });
 audio.addEventListener('pause', () => { paintBar(); paintTracks(); });
 audio.addEventListener('ended', () => step(1));
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') chiudiLettore();
+});
 
 export function mountPlayer() {
   const sections = [...document.querySelectorAll('.disco')];

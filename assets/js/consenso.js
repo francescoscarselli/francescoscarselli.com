@@ -50,8 +50,15 @@ function avviaStatistiche() {
   window.gtag('config', MISURAZIONE, { anonymize_ip: true });
 }
 
+function misuraBanner() {
+  const banner = document.querySelector('.consenso');
+  const altezza = banner ? Math.ceil(banner.getBoundingClientRect().height) : 0;
+  document.documentElement.style.setProperty('--spazio-banner', altezza + 'px');
+}
+
 function chiudiBanner() {
   document.querySelector('.consenso')?.remove();
+  misuraBanner();
 }
 
 function mostraBanner() {
@@ -92,6 +99,11 @@ function mostraBanner() {
   azioni.append(rifiuta, accetta);
   banner.append(testo, azioni);
   document.body.append(banner);
+  misuraBanner();
+  if (typeof ResizeObserver === 'function') {
+    new ResizeObserver(misuraBanner).observe(banner);
+  }
+  window.addEventListener('resize', misuraBanner);
 }
 
 export function riapriScelta() {
