@@ -581,3 +581,68 @@ body:has(.consenso) .barra { bottom: 96px; }
   font-size: var(--t2);
   color: var(--secondario);
 }
+
+@keyframes entra-titolo {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes entra-velo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes sale-barra {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes respira-pallino {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .45; transform: scale(.8); }
+}
+
+.apertura-testo h1 { animation: entra-titolo .7s cubic-bezier(.2, .7, .3, 1) both; }
+.apertura-frase { animation: entra-titolo .7s cubic-bezier(.2, .7, .3, 1) .12s both; }
+.apertura-testo .azioni { animation: entra-titolo .7s cubic-bezier(.2, .7, .3, 1) .22s both; }
+.apertura-foto { animation: entra-velo 1.1s ease-out both; }
+
+body.gia-navigato .apertura-testo h1,
+body.gia-navigato .apertura-frase,
+body.gia-navigato .apertura-testo .azioni,
+body.gia-navigato .apertura-foto { animation: none; }
+
+.barra { animation: sale-barra .34s cubic-bezier(.2, .7, .3, 1) both; }
+.tracce .in-ascolto .traccia-titolo::before { animation: respira-pallino 2.4s ease-in-out infinite; }
+
+.testata-voci a, .testata-lingua { position: relative; }
+.testata-voci a::after, .testata-lingua::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 1px;
+  background: var(--accento);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s ease;
+}
+.testata-voci a:hover::after,
+.testata-lingua:hover::after,
+.testata-voci a:focus-visible::after { transform: scaleX(1); }
+
+.tracce button { transition: color .18s ease, padding-left .18s ease; }
+.tracce button:hover:not(:disabled) { padding-left: 25px; }
+
+.bottone { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+.bottone:hover { background: var(--accento); color: var(--fondo); border-color: var(--accento); }
+.bottone.tenue:hover { background: var(--accento); color: var(--fondo); }
+
+.video a img, .video-principale video { transition: opacity .25s ease; }
+.video a:hover img { opacity: 1; }
+
+.diario article, .albo li { transition: border-color .25s ease; }
+.diario article:hover, .albo li:hover { border-top-color: rgba(190, 140, 78, .5); }
+
+@media (prefers-reduced-motion: reduce) {
+  .tracce .in-ascolto .traccia-titolo::before { animation: none; }
+  .tracce button:hover:not(:disabled) { padding-left: 19px; }
+}

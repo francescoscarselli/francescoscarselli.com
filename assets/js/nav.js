@@ -31,6 +31,7 @@ async function go(url, push) {
   sostituisci('main', incoming);
   sostituisci('.piede', incoming);
 
+  document.body.classList.add('gia-navigato');
   window.scrollTo({ top: 0 });
   window.dispatchEvent(new CustomEvent('page:changed'));
 }
