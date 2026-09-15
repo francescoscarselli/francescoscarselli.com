@@ -136,6 +136,33 @@ img { display: block; max-width: 100%; height: auto; }
 .azioni { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s3); }
 .apertura-testo .azioni .bottone { min-width: 11.5rem; text-align: center; }
 
+.social-apertura {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  max-width: none;
+}
+.social-apertura a {
+  padding: 9px 18px;
+  border: 1px solid var(--bordo);
+  border-radius: 2px;
+  font-family: var(--corrente);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--testo);
+  text-decoration: none;
+  text-shadow: 0 1px 10px rgba(18, 16, 15, .9);
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.social-apertura a:hover,
+.social-apertura a:focus-visible {
+  background: var(--accento);
+  border-color: var(--accento);
+  color: var(--fondo);
+  text-shadow: none;
+}
+
 .bottone {
   display: inline-block;
   padding: 13px var(--s3);
@@ -443,6 +470,7 @@ body:has(.apertura) .apertura {
 .piede nav a { font-size: 15px; text-decoration: none; color: var(--testo); }
 .piede nav a:hover { color: var(--accento); }
 .piede-nota { max-width: 32ch; }
+.piede-invito { max-width: 34ch; margin-bottom: var(--s1); color: rgba(243, 238, 230, .72); }
 
 @media (max-width: 860px) {
   .ritratto-griglia { grid-template-columns: 1fr; }
@@ -664,11 +692,13 @@ body:has(.apertura) .apertura {
 .apertura-testo h1 { animation: entra-titolo .7s cubic-bezier(.2, .7, .3, 1) both; }
 .apertura-frase { animation: entra-titolo .7s cubic-bezier(.2, .7, .3, 1) .12s both; }
 .apertura-testo .azioni { animation: entra-titolo .7s cubic-bezier(.2, .7, .3, 1) .22s both; }
+.social-apertura { animation: entra-titolo .7s cubic-bezier(.2, .7, .3, 1) .3s both; }
 .apertura-foto { animation: entra-velo 1.1s ease-out both; }
 
 body.gia-navigato .apertura-testo h1,
 body.gia-navigato .apertura-frase,
 body.gia-navigato .apertura-testo .azioni,
+body.gia-navigato .social-apertura,
 body.gia-navigato .apertura-foto { animation: none; }
 
 .barra { animation: sale-barra .34s cubic-bezier(.2, .7, .3, 1) both; }
