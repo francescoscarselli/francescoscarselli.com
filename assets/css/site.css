@@ -494,3 +494,46 @@ img { display: block; max-width: 100%; height: auto; }
   .community-griglia { grid-template-columns: 1fr; justify-items: start; }
   .logo-canale { max-width: 150px; }
 }
+
+.consenso {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2) var(--s3);
+  padding: var(--s2) var(--gronda);
+  background: var(--superficie);
+  border-top: 1px solid var(--bordo);
+}
+.consenso p {
+  margin: 0;
+  flex: 1 1 22rem;
+  font-size: var(--t2);
+  line-height: 1.55;
+  color: var(--testo);
+  max-width: 68ch;
+}
+.consenso a { color: var(--accento); }
+.consenso-azioni { display: flex; gap: var(--s1); flex: none; }
+.consenso .bottone {
+  cursor: pointer;
+  font-family: var(--corrente);
+  background: none;
+  color: var(--testo);
+  border: 1px solid var(--testo);
+  min-width: 110px;
+  text-align: center;
+}
+.consenso .bottone:hover { border-color: var(--accento); color: var(--accento); }
+
+body:has(.consenso) .barra { bottom: 96px; }
+
+@media (max-width: 640px) {
+  .consenso { padding-block: var(--s2); }
+  .consenso-azioni { width: 100%; }
+  .consenso-azioni .bottone { flex: 1; text-align: center; }
+  body:has(.consenso) .barra { bottom: 150px; }
+}

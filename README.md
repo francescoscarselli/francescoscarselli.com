@@ -85,6 +85,26 @@ Se vuoi ritagliare un dettaglio da una fotografia, in cima allo script c'è
 l'elenco `ritagli`: ogni riga dice come si chiamerà il ritaglio, da quale foto
 viene e quale porzione prendere.
 
+## Accendere le statistiche
+
+Il sito è predisposto per Google Analytics ma **non lo usa finché non glielo dici tu**.
+
+1. Su `analytics.google.com` crea una proprietà per francescoscarselli.com e prendi
+   il codice di misurazione, quello che comincia per `G-`.
+2. Apri `assets/js/consenso.js` e scrivilo nella prima riga, fra le virgolette:
+
+```
+const MISURAZIONE = 'G-XXXXXXXXXX';
+```
+
+Da quel momento compare la fascia che chiede il consenso. Finché la riga resta
+vuota non compare niente e il sito non contatta Google in alcun modo: è così che
+deve essere, perché senza tracciamento la fascia non serve e sarebbe solo un
+fastidio.
+
+Le statistiche si guardano dentro Google Analytics, non dentro il sito: un sito
+di file statici non può tenere il conto da sé.
+
 ## Prima di pubblicare
 
 Lancia sempre:
