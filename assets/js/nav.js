@@ -44,7 +44,10 @@ async function go(url, push) {
   sostituisci('.piede', incoming);
 
   document.body.classList.add('gia-navigato');
-  window.scrollTo({ top: 0 });
+  const ancora = new URL(url, location.href).hash.slice(1);
+  const bersaglio = ancora ? document.getElementById(ancora) : null;
+  if (bersaglio) bersaglio.scrollIntoView({ behavior: 'auto', block: 'start' });
+  else window.scrollTo({ top: 0 });
   window.dispatchEvent(new CustomEvent('page:changed'));
 }
 
@@ -80,6 +83,12 @@ document.addEventListener('click', (event) => {
   }
 
   if (!interno(link)) return;
+
+  const destinazione = new URL(link.href);
+  if (destinazione.hash && destinazione.pathname === location.pathname) {
+    if (scorriVerso(destinazione.hash)) event.preventDefault();
+    return;
+  }
 
   event.preventDefault();
   go(link.href, true).catch(() => { location.href = link.href; });

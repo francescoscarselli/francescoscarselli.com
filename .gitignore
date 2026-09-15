@@ -4,3 +4,4 @@ assets/img/src/
 .playwright-mcp/
 *.bckp
 assets/mio/*
+.playwright-mcp/
