@@ -186,7 +186,12 @@ img { display: block; max-width: 100%; height: auto; }
   margin-right: auto;
   text-shadow: 0 1px 10px rgba(18, 16, 15, .9);
 }
-.testata-voci { display: flex; gap: var(--s3); }
+.testata-voci {
+  display: flex;
+  gap: var(--s3);
+  padding-right: var(--s3);
+  border-right: 1px solid var(--bordo);
+}
 .testata-voci a, .testata-lingua {
   font-size: 15px;
   font-weight: 500;
@@ -196,8 +201,6 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .testata-voci a:hover, .testata-lingua:hover { color: var(--accento); }
 .testata-lingua {
-  border-left: 1px solid var(--bordo);
-  padding-left: var(--s3);
   font-size: 19px;
   line-height: 1;
   filter: saturate(.9);
@@ -443,7 +446,7 @@ body:has(.apertura) .apertura {
 @media (max-width: 640px) {
   .testata { flex-wrap: wrap; gap: var(--s2); padding-block: var(--s2); }
   .testata-voci { order: 3; width: 100%; justify-content: space-between; gap: var(--s2); }
-  .testata-lingua { border-left: 0; padding-left: 0; }
+  .testata-voci { padding-right: 0; border-right: 0; }
 
   .apertura { min-height: 82svh; }
   .apertura-foto img { object-position: 50% 12%; }
