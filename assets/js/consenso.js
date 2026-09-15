@@ -3,14 +3,14 @@ const MISURAZIONE = 'G-MGKRQP3WTJ';
 const CHIAVE = 'statistiche';
 const TESTI = {
   it: {
-    testo: 'Questo sito utilizza delle analytics per contare le visite. Nessun dato personale viene raccolto.',
+    testo: 'Questo sito può usare Google Analytics per contare le visite in forma aggregata.',
     informativa: 'Come funziona',
     accetta: 'Accetta',
     rifiuta: 'Rifiuta',
     pagina: 'privacy'
   },
   en: {
-    testo: 'This site can use Analytics to count visits. No personal data is collected.',
+    testo: 'This site may use Google Analytics to count visits in aggregate form.',
     informativa: 'How it works',
     accetta: 'Accept',
     rifiuta: 'Decline',

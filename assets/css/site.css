@@ -604,7 +604,11 @@ body:has(.apertura) .apertura {
   min-width: 110px;
   text-align: center;
 }
-.consenso .bottone:hover { border-color: var(--accento); color: var(--accento); }
+.consenso .bottone:hover {
+  background: var(--accento);
+  border-color: var(--accento);
+  color: var(--fondo);
+}
 
 .barra { bottom: var(--spazio-banner, 0px); }
 
