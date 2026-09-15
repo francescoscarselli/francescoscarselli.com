@@ -470,9 +470,9 @@ img { display: block; max-width: 100%; height: auto; }
 
 .marchio { margin: 0 0 var(--s2); }
 .marchio img {
-  width: 172px;
+  width: 100%;
+  max-width: 250px;
   height: auto;
-  border-radius: 3px;
 }
 
 .video-principale { margin: var(--s4) 0 var(--s5); }
