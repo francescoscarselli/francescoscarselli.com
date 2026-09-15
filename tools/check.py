@@ -50,7 +50,7 @@ for page in PAGES:
             if candidate.startswith("/"):
                 note(page, f"collegamento assoluto, usare percorsi relativi: {candidate}")
                 continue
-            richiesto = candidate.split("#")[0]
+            richiesto = candidate.split("#")[0].split("?")[0]
             if not richiesto:
                 continue
             resolved = (base / richiesto).resolve()
