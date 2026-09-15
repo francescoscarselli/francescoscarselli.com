@@ -50,8 +50,12 @@ for page in PAGES:
             if candidate.startswith("/"):
                 note(page, f"collegamento assoluto, usare percorsi relativi: {candidate}")
                 continue
-            resolved = (base / candidate.split("#")[0]).resolve()
-            if not resolved.exists():
+            richiesto = candidate.split("#")[0]
+            if not richiesto:
+                continue
+            resolved = (base / richiesto).resolve()
+            alternative = [resolved, resolved.with_suffix(".html"), resolved / "index.html"]
+            if not any(a.exists() for a in alternative):
                 note(page, f"collegamento rotto: {candidate}")
 
     if page.name != "404.html":

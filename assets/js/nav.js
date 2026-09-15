@@ -40,7 +40,10 @@ function interno(link) {
   if (link.hasAttribute('download') || link.target) return false;
   const href = link.getAttribute('href') || '';
   if (href.startsWith('#') || href.startsWith('mailto:')) return false;
-  return link.pathname.endsWith('.html') || link.pathname.endsWith('/');
+  const ultimo = link.pathname.split('/').pop();
+  if (!ultimo) return true;
+  if (ultimo.endsWith('.html')) return true;
+  return !ultimo.includes('.');
 }
 
 function scorriVerso(selettore) {
