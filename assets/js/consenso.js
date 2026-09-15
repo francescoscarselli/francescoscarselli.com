@@ -1,4 +1,4 @@
-const MISURAZIONE = '';
+const MISURAZIONE = 'G-MGKRQP3WTJ';
 
 const CHIAVE = 'statistiche';
 const TESTI = {
