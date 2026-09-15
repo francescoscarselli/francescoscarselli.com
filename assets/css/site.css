@@ -136,12 +136,18 @@ img { display: block; max-width: 100%; height: auto; }
 .azioni { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s3); }
 .apertura-testo .azioni .bottone { min-width: 11.5rem; text-align: center; }
 
+.apertura-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s3);
+}
 .social-apertura {
   display: flex;
   align-items: center;
   gap: 26px;
-  margin-top: var(--s3);
-  margin-left: -11px;
+  margin: var(--s3) 0 var(--s2);
   max-width: none;
 }
 .social-apertura a {
@@ -494,6 +500,8 @@ body:has(.apertura) .apertura {
     padding-right: 0;
     border-right: 0;
   }
+
+  .social-apertura { margin-left: -11px; }
 
   .apertura { min-height: 82svh; }
   .apertura-foto img { object-position: 50% 12%; }
