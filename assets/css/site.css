@@ -138,29 +138,31 @@ img { display: block; max-width: 100%; height: auto; }
 
 .social-apertura {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
+  align-items: center;
+  gap: 26px;
+  margin-top: var(--s3);
+  margin-left: -11px;
   max-width: none;
 }
 .social-apertura a {
-  padding: 9px 18px;
-  border: 1px solid var(--bordo);
-  border-radius: 2px;
-  font-family: var(--corrente);
-  font-size: 14px;
-  font-weight: 500;
+  display: inline-flex;
+  padding: 11px;
+  margin: -11px 0;
   color: var(--testo);
-  text-decoration: none;
-  text-shadow: 0 1px 10px rgba(18, 16, 15, .9);
-  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  opacity: .82;
+  transition: color .2s ease, opacity .2s ease, transform .2s ease;
+}
+.social-apertura svg {
+  width: 21px;
+  height: 21px;
+  display: block;
+  filter: drop-shadow(0 1px 6px rgba(18, 16, 15, .95));
 }
 .social-apertura a:hover,
 .social-apertura a:focus-visible {
-  background: var(--accento);
-  border-color: var(--accento);
-  color: var(--fondo);
-  text-shadow: none;
+  color: var(--accento);
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 .bottone {
