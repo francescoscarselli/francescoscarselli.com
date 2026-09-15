@@ -628,6 +628,10 @@ body:has(.apertura) .apertura {
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
 }
+@keyframes scende-barra {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
 @keyframes respira-pallino {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: .45; transform: scale(.8); }
@@ -644,6 +648,10 @@ body.gia-navigato .apertura-testo .azioni,
 body.gia-navigato .apertura-foto { animation: none; }
 
 .barra { animation: sale-barra .34s cubic-bezier(.2, .7, .3, 1) both; }
+.barra.in-uscita {
+  animation: scende-barra .3s cubic-bezier(.5, 0, .85, .4) both;
+  pointer-events: none;
+}
 .tracce .in-ascolto .traccia-titolo::before { animation: respira-pallino 2.4s ease-in-out infinite; }
 
 .testata-voci a { position: relative; }

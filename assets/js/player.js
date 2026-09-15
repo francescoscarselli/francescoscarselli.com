@@ -17,6 +17,7 @@ function readTracks(section) {
 
 function buildBar() {
   if (barra) return barra;
+  document.querySelectorAll('.barra.in-uscita').forEach((vecchia) => vecchia.remove());
   barra = document.createElement('div');
   barra.className = 'barra in-pausa';
   barra.hidden = true;
@@ -46,9 +47,26 @@ function chiudiLettore() {
   audio.removeAttribute('src');
   audio.load();
   queue = createQueue([]);
-  barra.remove();
-  barra = null;
   paintTracks();
+
+  const uscente = barra;
+  barra = null;
+
+  let rimossa = false;
+  const rimuovi = () => {
+    if (rimossa) return;
+    rimossa = true;
+    uscente.remove();
+  };
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    rimuovi();
+    return;
+  }
+
+  uscente.classList.add('in-uscita');
+  uscente.addEventListener('animationend', rimuovi, { once: true });
+  setTimeout(rimuovi, 600);
 }
 
 function paintBar() {
