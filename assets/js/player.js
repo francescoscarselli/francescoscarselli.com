@@ -40,13 +40,14 @@ function buildBar() {
 }
 
 function chiudiLettore() {
-  if (!barra || barra.hidden) return;
+  if (!barra) return;
   chiusaDallUtente = true;
   audio.pause();
   audio.removeAttribute('src');
   audio.load();
   queue = createQueue([]);
-  barra.hidden = true;
+  barra.remove();
+  barra = null;
   paintTracks();
 }
 

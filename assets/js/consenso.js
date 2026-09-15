@@ -97,7 +97,10 @@ function mostraBanner() {
   accetta.addEventListener('click', () => { ricorda('si'); chiudiBanner(); avviaStatistiche(); });
 
   azioni.append(rifiuta, accetta);
-  banner.append(testo, azioni);
+  const dentro = document.createElement('div');
+  dentro.className = 'consenso-dentro';
+  dentro.append(testo, azioni);
+  banner.append(dentro);
   document.body.append(banner);
   misuraBanner();
   if (typeof ResizeObserver === 'function') {

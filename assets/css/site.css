@@ -297,6 +297,7 @@ body:has(.apertura) .apertura {
 }
 .nota-audio { max-width: 52ch; margin-top: var(--s2); }
 
+.barra[hidden] { display: none; }
 .barra {
   position: fixed;
   inset-inline: 0;
@@ -558,18 +559,25 @@ body:has(.apertura) .apertura {
   .logo-canale { max-width: 150px; }
 }
 
+.consenso[hidden] { display: none; }
 .consenso {
   position: fixed;
   inset-inline: 0;
   bottom: 0;
   z-index: 60;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--s2) var(--s3);
   padding: var(--s2) var(--gronda);
   background: var(--superficie);
   border-top: 1px solid var(--bordo);
+}
+.consenso-dentro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2) var(--s3);
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
 }
 .consenso p {
   margin: 0;
