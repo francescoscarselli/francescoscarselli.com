@@ -130,11 +130,14 @@ poi apri `http://localhost:8000` nel browser.
 Il sito sta su GitHub Pages, gratis. Ogni volta che carichi le modifiche su
 GitHub, il sito si aggiorna da solo dopo un minuto.
 
-Finché i DNS del dominio puntano al vecchio sito, l'indirizzo è
-`francescoscarselli.github.io/francescoscarselli.com`. Quando si passa al
-dominio vero, il file `docs/CNAME-da-attivare` va spostato nella cartella
-principale e rinominato `CNAME`: da quel momento GitHub serve il sito su
-`francescoscarselli.com`.
+Il dominio `francescoscarselli.com` è impostato nel file `CNAME`. Su Cloudflare
+i record del sito sono due CNAME verso `francescoscarselli.github.io`, uno per
+`@` e uno per `www`, entrambi in modalità **DNS only**: con il proxy acceso
+GitHub non riuscirebbe a emettere il certificato.
+
+I record della posta (`MX` e l'`SPF` di Aruba) non c'entrano col sito e non
+vanno mai toccati: se spariscono, smette di funzionare
+`info@francescoscarselli.com`.
 
 Non c'è nessun tracciamento e nessun cookie: per questo non c'è la fascia dei
 cookie da accettare. Nessun dato di chi visita il sito viene raccolto.
