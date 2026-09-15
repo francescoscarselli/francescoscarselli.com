@@ -514,11 +514,28 @@ body:has(.apertura) .apertura {
   aspect-ratio: 16 / 9;
 }
 .video-principale .avviso-audio {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 10px;
+  padding: 7px 14px;
+  font-family: var(--corrente);
   font-size: var(--t2);
   color: var(--accento);
+  background: none;
+  border: 1px solid var(--accento);
+  border-radius: 2px;
+  cursor: pointer;
 }
+.video-principale .avviso-audio::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 7px solid currentColor;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+.video-principale .avviso-audio:hover { background: var(--accento); color: var(--fondo); }
 .video-principale figcaption {
   margin-top: 6px;
   font-size: var(--t2);

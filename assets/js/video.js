@@ -15,3 +15,56 @@ document.addEventListener('click', (event) => {
   frame.allowFullscreen = true;
   article.replaceChildren(frame);
 });
+
+function preparaPresentazione() {
+  const video = document.querySelector('.video-principale video');
+  if (!video || video.dataset.pronto) return;
+  video.dataset.pronto = 'si';
+
+  const invito = document.querySelector('.video-principale .avviso-audio');
+
+  const accendiAudio = () => {
+    if (!video.muted) return;
+    video.muted = false;
+    video.volume = 1;
+    if (invito) invito.hidden = true;
+    rimuoviAscoltatori();
+  };
+
+  const alPrimoGesto = () => {
+    if (video.paused) return;
+    accendiAudio();
+  };
+
+  function rimuoviAscoltatori() {
+    document.removeEventListener('pointerdown', alPrimoGesto);
+    document.removeEventListener('keydown', alPrimoGesto);
+  }
+
+  video.play().then(() => {
+    video.muted = false;
+    video.play().then(() => {
+      if (invito) invito.hidden = true;
+    }).catch(() => {
+      video.muted = true;
+      video.play().catch(() => {});
+      if (invito) invito.hidden = false;
+    });
+  }).catch(() => {});
+
+  if (invito) {
+    invito.addEventListener('click', (event) => {
+      event.preventDefault();
+      accendiAudio();
+    });
+  }
+
+  document.addEventListener('pointerdown', alPrimoGesto);
+  document.addEventListener('keydown', alPrimoGesto);
+  video.addEventListener('volumechange', () => {
+    if (!video.muted && invito) invito.hidden = true;
+  });
+}
+
+preparaPresentazione();
+window.addEventListener('page:changed', preparaPresentazione);

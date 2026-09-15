@@ -3,11 +3,18 @@ const cache = new Map();
 
 async function fetchPage(url) {
   if (cache.has(url)) return cache.get(url);
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: 'no-cache' });
   if (!response.ok) throw new Error(String(response.status));
   const documento = parser.parseFromString(await response.text(), 'text/html');
   cache.set(url, documento);
   return documento;
+}
+
+function versioniRisorse(documento) {
+  return [...documento.querySelectorAll('link[rel="stylesheet"], script[src]')]
+    .map((e) => (e.getAttribute('href') || e.getAttribute('src') || '').split('/').pop())
+    .sort()
+    .join('|');
 }
 
 function sostituisci(selettore, incoming) {
@@ -21,6 +28,11 @@ function sostituisci(selettore, incoming) {
 async function go(url, push) {
   const incoming = await fetchPage(url);
   if (!incoming.querySelector('main')) throw new Error('pagina senza contenuto');
+
+  if (versioniRisorse(incoming) !== versioniRisorse(document)) {
+    location.href = url;
+    return;
+  }
 
   if (push) history.pushState({}, '', url);
 
