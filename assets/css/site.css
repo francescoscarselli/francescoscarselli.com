@@ -185,7 +185,10 @@ img { display: block; max-width: 100%; height: auto; }
   text-decoration: none;
   margin-right: auto;
   text-shadow: 0 1px 10px rgba(18, 16, 15, .9);
+  transform-origin: left center;
+  transition: transform .18s ease, color .18s ease;
 }
+.testata-nome:hover { transform: scale(1.05); color: var(--accento); }
 .testata-voci {
   display: flex;
   gap: var(--s3);
