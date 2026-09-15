@@ -273,8 +273,7 @@ img { display: block; max-width: 100%; height: auto; }
   border-radius: 50%;
   background: var(--accento);
 }
-.senza-audio .nota-audio { display: block; }
-.nota-audio { display: none; max-width: 44ch; }
+.nota-audio { max-width: 52ch; margin-top: var(--s2); }
 
 .barra {
   position: fixed;
