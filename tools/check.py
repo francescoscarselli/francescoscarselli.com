@@ -93,7 +93,7 @@ for lingua, pagine in (("it", [p for p in PAGES if p.parent == ROOT]),
 REQUIRED_FONTS = [
     "assets/fonts/newsreader-300.woff2",
     "assets/fonts/newsreader-300-italic.woff2",
-    "assets/fonts/newsreader-700.woff2",
+    "assets/fonts/newsreader-500.woff2",
     "assets/fonts/archivo-400.woff2",
     "assets/fonts/archivo-500.woff2",
     "assets/fonts/instrument-serif.woff2",

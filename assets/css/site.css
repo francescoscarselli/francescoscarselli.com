@@ -14,8 +14,8 @@
 }
 @font-face {
   font-family: 'Newsreader';
-  src: url('../fonts/newsreader-700.woff2') format('woff2');
-  font-weight: 700;
+  src: url('../fonts/newsreader-500.woff2') format('woff2');
+  font-weight: 500;
   font-style: normal;
   font-display: optional;
 }
@@ -182,6 +182,7 @@ img { display: block; max-width: 100%; height: auto; }
 .testata-nome {
   font-family: var(--titolo);
   font-size: var(--t4);
+  font-weight: 500;
   text-decoration: none;
   margin-right: auto;
   text-shadow: 0 1px 10px rgba(18, 16, 15, .9);
@@ -357,6 +358,7 @@ body:has(.apertura) .apertura {
 .barra-titolo {
   font-family: var(--titolo);
   font-size: var(--t3);
+  font-weight: 300;
   line-height: 1;
   white-space: nowrap;
   overflow: hidden;
