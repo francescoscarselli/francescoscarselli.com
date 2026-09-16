@@ -1,13 +1,15 @@
 User-agent: *
 Allow: /
 
-User-agent: GPTBot
-Disallow: /
-
 User-agent: OAI-SearchBot
-Disallow: /
-
 User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Allow: /
+
+User-agent: GPTBot
 Disallow: /
 
 User-agent: ClaudeBot
@@ -35,9 +37,6 @@ User-agent: FacebookBot
 Disallow: /
 
 User-agent: meta-externalagent
-Disallow: /
-
-User-agent: PerplexityBot
 Disallow: /
 
 User-agent: Amazonbot
