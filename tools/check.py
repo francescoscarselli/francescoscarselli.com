@@ -8,6 +8,11 @@ MAX_PAGE_BYTES = 60_000
 
 problems = []
 
+MAPPA = (ROOT / "sitemap.xml").read_text(encoding="utf-8") if (ROOT / "sitemap.xml").exists() else ""
+PREVISTI = set(re.findall(r"<loc>([^<]+)</loc>", MAPPA))
+if len(PREVISTI) != len(PAGES) - 1:
+    problems.append(f"sitemap con {len(PREVISTI)} indirizzi per {len(PAGES) - 1} pagine indicizzabili")
+
 def note(page, message):
     problems.append(f"{page.relative_to(ROOT)}: {message}")
 
@@ -66,6 +71,17 @@ for page in PAGES:
         langs = re.findall(r'<link rel="alternate" hreflang="([a-z-]+)" href="([^"]+)"', source)
         if {code for code, _ in langs} != {"it", "en", "x-default"}:
             note(page, "hreflang incompleto: servono it, en e x-default")
+        canonico = re.findall(r'<link rel="canonical" href="([^"]+)">', source)
+        og = re.findall(r'<meta property="og:url" content="([^"]+)">', source)
+        propria = dict(langs).get(re.search(r'<html[^>]+lang="(it|en)"', source).group(1)) if langs else None
+        if len(canonico) != 1:
+            note(page, "serve esattamente un link canonical")
+        elif canonico[0] not in PREVISTI:
+            note(page, f"canonical assente dalla sitemap: {canonico[0]}")
+        elif og and og[0] != canonico[0]:
+            note(page, f"og:url diverso dal canonical: {og[0]}")
+        elif propria != canonico[0]:
+            note(page, f"hreflang della propria lingua diverso dal canonical: {propria}")
 
 def blocco(source, apertura, chiusura):
     trovato = re.search(apertura + r".*?" + chiusura, source, re.S)
