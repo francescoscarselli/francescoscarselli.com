@@ -47,13 +47,17 @@ for page in PAGES:
         for candidate in [t.strip().split(" ")[0] for t in target.split(",") if t.strip()]:
             if not candidate or candidate.startswith(("http", "mailto:", "#", "data:")):
                 continue
-            if candidate.startswith("/"):
-                note(page, f"collegamento assoluto, usare percorsi relativi: {candidate}")
+            errore = page.name == "404.html"
+            if candidate.startswith("/") != errore:
+                if errore:
+                    note(page, f"il 404 compare a qualsiasi profondita, usare percorsi dalla radice: {candidate}")
+                else:
+                    note(page, f"collegamento assoluto, usare percorsi relativi: {candidate}")
                 continue
             richiesto = candidate.split("#")[0].split("?")[0]
             if not richiesto:
                 continue
-            resolved = (base / richiesto).resolve()
+            resolved = (ROOT / richiesto.lstrip("/")).resolve() if errore else (base / richiesto).resolve()
             alternative = [resolved, resolved.with_suffix(".html"), resolved / "index.html"]
             if not any(a.exists() for a in alternative):
                 note(page, f"collegamento rotto: {candidate}")
@@ -68,7 +72,7 @@ def blocco(source, apertura, chiusura):
     if not trovato:
         return None
     testo = trovato.group(0)
-    testo = re.sub(r'href="[^"]*"', 'href=""', testo)
+    testo = re.sub(r'(href|src)="[^"]*"', r'\1=""', testo)
     return re.sub(r"\s+", " ", testo).strip()
 
 for lingua, pagine in (("it", [p for p in PAGES if p.parent == ROOT]),
