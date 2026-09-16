@@ -38,8 +38,24 @@ function ricorda(valore) {
   }
 }
 
+function disattivaStatistiche() {
+  if (!MISURAZIONE) return;
+  window[`ga-disable-${MISURAZIONE}`] = true;
+  const dominio = location.hostname.replace(/^www\./, '');
+  document.cookie.split(';')
+    .map((voce) => voce.split('=')[0].trim())
+    .filter((nome) => nome.startsWith('_ga'))
+    .forEach((nome) => {
+      for (const ambito of ['', `; domain=${dominio}`, `; domain=.${dominio}`]) {
+        document.cookie = `${nome}=; Max-Age=0; path=/${ambito}`;
+      }
+    });
+}
+
 function avviaStatistiche() {
-  if (!MISURAZIONE || window.dataLayer) return;
+  if (!MISURAZIONE) return;
+  window[`ga-disable-${MISURAZIONE}`] = false;
+  if (window.dataLayer) return;
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${MISURAZIONE}`;
@@ -88,7 +104,7 @@ function mostraBanner() {
   rifiuta.type = 'button';
   rifiuta.className = 'bottone tenue';
   rifiuta.textContent = t.rifiuta;
-  rifiuta.addEventListener('click', () => { ricorda('no'); chiudiBanner(); });
+  rifiuta.addEventListener('click', () => { ricorda('no'); chiudiBanner(); disattivaStatistiche(); });
 
   const accetta = document.createElement('button');
   accetta.type = 'button';
@@ -123,7 +139,8 @@ function avvia() {
   if (!MISURAZIONE) return;
   const decisione = scelta();
   if (decisione === 'si') avviaStatistiche();
-  else if (decisione !== 'no') mostraBanner();
+  else if (decisione === 'no') disattivaStatistiche();
+  else mostraBanner();
 }
 
 document.addEventListener('click', (event) => {

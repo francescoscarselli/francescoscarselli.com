@@ -32,7 +32,9 @@ async function fetchPage(url) {
 
 function versioniRisorse(documento) {
   return [...documento.querySelectorAll('link[rel="stylesheet"], script[src]')]
-    .map((e) => (e.getAttribute('href') || e.getAttribute('src') || '').split('/').pop())
+    .map((e) => e.getAttribute('href') || e.getAttribute('src') || '')
+    .filter((indirizzo) => !/^(https?:)?\/\//.test(indirizzo))
+    .map((indirizzo) => indirizzo.split('/').pop())
     .sort()
     .join('|');
 }
