@@ -1,6 +1,10 @@
 const parser = new DOMParser();
 const cache = new Map();
 
+document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]').forEach((icona) => {
+  icona.href = icona.href;
+});
+
 async function fetchPage(url) {
   if (cache.has(url)) return cache.get(url);
   const response = await fetch(url, { cache: 'no-cache' });
