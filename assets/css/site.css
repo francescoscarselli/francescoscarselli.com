@@ -3,42 +3,42 @@
   src: url('../fonts/newsreader-300.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 @font-face {
   font-family: 'Newsreader';
   src: url('../fonts/newsreader-300-italic.woff2') format('woff2');
   font-weight: 300;
   font-style: italic;
-  font-display: optional;
+  font-display: block;
 }
 @font-face {
   font-family: 'Newsreader';
   src: url('../fonts/newsreader-500.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 @font-face {
   font-family: 'Instrument Serif';
   src: url('../fonts/instrument-serif.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 @font-face {
   font-family: 'Archivo';
   src: url('../fonts/archivo-400.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 @font-face {
   font-family: 'Archivo';
   src: url('../fonts/archivo-500.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 
 :root {
@@ -227,7 +227,7 @@ body:has(.apertura) .testata {
 }
 body:has(.apertura) .apertura {
   margin-top: 0;
-  padding-top: 0;
+  padding-top: calc(var(--altezza-testata, 110px) + var(--s3));
 }
 .apertura-foto { position: absolute; inset: 0 0 2px; }
 .apertura-foto img {

@@ -5,6 +5,22 @@ document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]').forE
   icona.href = icona.href;
 });
 
+const osservatoreTestata = typeof ResizeObserver === 'function'
+  ? new ResizeObserver(([voce]) => {
+    const altezza = Math.ceil(voce.target.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--altezza-testata', altezza + 'px');
+  })
+  : null;
+
+function osservaTestata() {
+  const testata = document.querySelector('.testata');
+  if (!testata || !osservatoreTestata) return;
+  osservatoreTestata.disconnect();
+  osservatoreTestata.observe(testata);
+}
+
+osservaTestata();
+
 async function fetchPage(url) {
   if (cache.has(url)) return cache.get(url);
   const response = await fetch(url, { cache: 'no-cache' });
@@ -64,6 +80,7 @@ async function go(url, push) {
   document.documentElement.lang = incoming.documentElement.lang;
 
   sostituisci('.testata', incoming);
+  osservaTestata();
   sostituisci('main', incoming);
   sostituisci('.piede', incoming);
 
