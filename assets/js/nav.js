@@ -17,6 +17,23 @@ function versioniRisorse(documento) {
     .join('|');
 }
 
+function inAscolto() {
+  return Boolean(document.querySelector('.barra:not(.in-pausa):not(.in-uscita)'));
+}
+
+function aggiornaStile(incoming, url) {
+  const nuovo = incoming.querySelector('link[rel="stylesheet"]');
+  const vecchio = document.querySelector('link[rel="stylesheet"]');
+  if (!nuovo || !vecchio) return;
+  const indirizzo = new URL(nuovo.getAttribute('href'), url).href;
+  if (vecchio.href === indirizzo) return;
+  const foglio = document.createElement('link');
+  foglio.rel = 'stylesheet';
+  foglio.href = indirizzo;
+  foglio.addEventListener('load', () => vecchio.remove(), { once: true });
+  vecchio.after(foglio);
+}
+
 function sostituisci(selettore, incoming) {
   const nuovo = incoming.querySelector(selettore);
   const vecchio = document.querySelector(selettore);
@@ -30,8 +47,11 @@ async function go(url, push) {
   if (!incoming.querySelector('main')) throw new Error('pagina senza contenuto');
 
   if (versioniRisorse(incoming) !== versioniRisorse(document)) {
-    location.href = url;
-    return;
+    if (!inAscolto()) {
+      location.href = url;
+      return;
+    }
+    aggiornaStile(incoming, url);
   }
 
   if (push) history.pushState({}, '', url);

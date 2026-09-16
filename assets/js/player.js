@@ -164,4 +164,7 @@ export function mountPlayer() {
 }
 
 mountPlayer();
-window.addEventListener('page:changed', mountPlayer);
+window.addEventListener('page:changed', () => {
+  if (document.querySelector('.video-principale')) chiudiLettore();
+  mountPlayer();
+});
