@@ -229,7 +229,7 @@ body:has(.apertura) .apertura {
   margin-top: 0;
   padding-top: 0;
 }
-.apertura-foto { position: absolute; inset: 0; }
+.apertura-foto { position: absolute; inset: 0 0 2px; }
 .apertura-foto img {
   width: 100%;
   height: 100%;
